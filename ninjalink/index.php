@@ -20,7 +20,7 @@ function ninjalink_js() {
             "var ln_web = '" . get_option('ninjalink_ln_web') . "';" .
             "function LinkNinjaOnload() {" .
             'var element = document.createElement("script");' .
-            'element.src = "http://js.ninjalink.com/r.js";' .
+            'element.src = "//js.ninjalink.com/r.js";' .
             'document.body.appendChild(element);' .
             '}' .
             'if (window.addEventListener) window.addEventListener("load", LinkNinjaOnload, false);' .
