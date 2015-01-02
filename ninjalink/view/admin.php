@@ -20,14 +20,15 @@ defined('ABSPATH') or die("No script kiddies please!");
         <?php settings_fields( 'ninjalink-settings' ); ?>
         <?php do_settings_sections( 'ninjalink-settings' ); ?>
         <table class="form-table">
-            <tr valign="top">
-                <th scope="row">User ID</th>
-                <td><input type="text" name="ninjalink_ln_id" value="<?php echo esc_attr( get_option('ninjalink_ln_id') ); ?>" /></td>
-            </tr>
 
             <tr valign="top">
                 <th scope="row">Website ID</th>
                 <td><input type="text" name="ninjalink_ln_web" value="<?php echo esc_attr( get_option('ninjalink_ln_web') ); ?>" /></td>
+            </tr>
+
+            <tr valign="top">
+                <th scope="row">Token (Key)</th>
+                <td><input type="text" name="ninjalink_ln_id" value="<?php echo esc_attr( get_option('ninjalink_ln_id') ); ?>" /></td>
             </tr>
 
         </table>
