@@ -3,7 +3,7 @@
  * Plugin Name: Ninjalink Affiliate
  * Plugin URI: http://ninjalink.com/plugins
  * Description: Replace all links with affiliate ones.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Ninjalink.com
  * Author URI: http://ninjalink.com
  */

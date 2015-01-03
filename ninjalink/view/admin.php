@@ -8,7 +8,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 <div class="wrap">
     <a href="http://www.ninjalink.com" target="_blank" name="Go to Ninjalink.com"><img src="<?php echo plugins_url() .'/ninjalink/images/ninjalink.png'; ?>"></a>
     <hr>
-    <p>To register a ninjalink.com account, please <a href="http://www.ninjalink.com/account">click here</a></p>
+    <p>To register a ninjalink.com account, please <a href="https://www.ninjalink.com/account">click here</a></p>
 
     <?php if($updated): ?>
         <div class="updated">
