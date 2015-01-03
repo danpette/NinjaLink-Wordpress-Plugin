@@ -3,13 +3,13 @@
  * Plugin Name: Ninjalink Affiliate
  * Plugin URI: http://ninjalink.com/plugins
  * Description: Replace all links with affiliate ones.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Ninjalink.com
  * Author URI: http://ninjalink.com
  */
 defined('ABSPATH') or die("No script kiddies please!");
 
-const VERSION = '1.0.1 - 02.01.2014';
+const VERSION = '1.0.2 - 02.01.2014';
 
 function ninjalink_js() {
     $ln_id = get_option('ninjalink_ln_id');
