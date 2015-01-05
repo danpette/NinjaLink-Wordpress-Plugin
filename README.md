@@ -1,6 +1,13 @@
 NinjaLink-Wordpress-Plugin
 ==========================
 
+This plugin requires an active and vertified account on: https://ninjalink.com/account
+
+Ninjalink.com is available in the following countries:
+* Norway
+* Sweden (coming Q2 2015)
+* Denmark (coming Q2 2015)
+
  # Changelog
  - Version 1.0.2 - 03.01.2015
  * Fixed typo
