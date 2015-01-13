@@ -16,8 +16,8 @@ function ninjalink_js() {
     $ln_web = get_option('ninjalink_ln_web');
     if(!empty($ln_id) && !empty($ln_web)) {
         echo '<script type="text/javascript">' .
-            "var ln_id = '" . trim(str_replace(' ','',get_option('ninjalink_ln_id'))) . "';" .
-            "var ln_web = '" . trim(str_replace(' ','',get_option('ninjalink_ln_web'))) . "';" .
+            "var ln_id = '" . str_replace(' ','',get_option('ninjalink_ln_id')) . "';" .
+            "var ln_web = '" . str_replace(' ','',get_option('ninjalink_ln_web')) . "';" .
             "function LinkNinjaOnload() {" .
             'var element = document.createElement("script");' .
             'element.src = "//js.ninjalink.com/r.js";' .
