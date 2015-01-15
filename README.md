@@ -7,6 +7,10 @@ Ninjalink.com is available in the following countries:
 * Denmark (coming Q2 2015)
 
 # Changelog
+
+Version 1.0.3 - 15.01.2015
+* Any space in the website id or token will now be removed (fixes broken tracking).
+
 Version 1.0.2 - 03.01.2015
 * Fixed typo
 * Fixed all links to ninjalink.com to use https version.
