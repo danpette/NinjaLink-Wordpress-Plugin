@@ -31,32 +31,32 @@ function ninjalink_js() {
 }
 
 function ninjalink_add_menu() {
-    add_options_page( 'Ninjalink', 'Ninjalink', 'manage_options', 'ninjalink-wp-plugin', 'ninjalink_admin_display' );
+    add_options_page('Ninjalink', 'Ninjalink', 'manage_options', 'ninjalink-wp-plugin', 'ninjalink_admin_display');
 }
 
 function ninjalink_admin_display() {
-    if ( !current_user_can( 'manage_options' ) )  {
-        wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+    if(!current_user_can( 'manage_options' )) {
+        wp_die(__( 'You do not have sufficient permissions to access this page.' ));
     }
 
     $updated = false;
 
-    if($_POST){
-        if(isset($_POST['option_page']) && $_POST['option_page'] == "ninjalink-settings" && isset($_POST['action']) && $_POST['action'] = "update"){
-            $ln_id = "";
-            $ln_web = "";
-            if(isset($_POST['ninjalink_ln_id'])){
-                $ln_id = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_id']);
-                update_option('ninjalink_ln_id', $ln_id);
-            }
-
-            if(isset($_POST['ninjalink_ln_web'])){
-                $ln_web = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_web']);
-                update_option('ninjalink_ln_web', $ln_web);
-            }
-
-            $updated = true;
+    if($_POST && isset($_POST['option_page']) && $_POST['option_page'] === "ninjalink-settings" && 
+        isset($_POST['action']) && $_POST['action'] === "update"){
+        $ln_id = "";
+        $ln_web = "";
+        
+        if(isset($_POST['ninjalink_ln_id'])){
+            $ln_id = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_id']);
+            update_option('ninjalink_ln_id', $ln_id);
         }
+
+        if(isset($_POST['ninjalink_ln_web'])){
+            $ln_web = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_web']);
+            update_option('ninjalink_ln_web', $ln_web);
+        }
+
+        $updated = true;
     }
 
     include  plugin_dir_path( __FILE__ ) . 'view/admin.php';
