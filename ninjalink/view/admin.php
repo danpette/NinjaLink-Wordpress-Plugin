@@ -16,10 +16,21 @@ defined('ABSPATH') or die("No script kiddies please!");
         </div>
     <?php endif; ?>
 
+    <?php if($failed !== false): ?>
+        <div class="failed">
+            <p><?php echo $failed; ?></p>
+        </div>
+    <?php endif; ?>
+
     <form method="post" action="options-general.php?page=ninjalink-wp-plugin">
         <?php settings_fields( 'ninjalink-settings' ); ?>
         <?php do_settings_sections( 'ninjalink-settings' ); ?>
         <table class="form-table">
+
+            <tr valign="top">
+                <th scope="row">Whitelist (one domain per line, no http or https)</th>
+                <td><textarea name="ninjalink_ln_whitelist"><?php echo esc_attr( get_option('ninjalink_ln_whitelist') ); ?></textarea></td>
+            </tr>
 
             <tr valign="top">
                 <th scope="row">Website ID</th>

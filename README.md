@@ -8,6 +8,11 @@ Ninjalink.com is available in the following countries:
 
 # Changelog
 
+Version 1.1.0 - 09.03.2015
+* Whitelist url, enter the url of the site you want this script to ignore.
+* Check User ID and Website ID on save. The form will only be saved if the values are correct.
+* Fixed typo
+
 Version 1.0.3 - 15.01.2015
 * Any space in the website id or token will now be removed (fixes broken tracking).
 
