@@ -3,13 +3,11 @@ NinjaLink-Wordpress-Plugin
 This plugin requires an active and vertified account on: https://ninjalink.com/account
 Ninjalink.com is available in the following countries:
 * Norway
-* Sweden (coming Q2 2015)
-* Denmark (coming Q2 2015)
 
 # Changelog
 
-Version 1.1.0 - 09.03.2015
-* Whitelist url, enter the url of the site you want this script to ignore.
+Version 1.1.0 - 18.03.2015
+* Blacklist url, enter the url of the sites you want this script to ignore. use one domain per line, no http://, https:// or www. in front of the domain.
 * Check User ID and Website ID on save. The form will only be saved if the values are correct.
 * Fixed typo
 

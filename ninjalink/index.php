@@ -55,7 +55,7 @@ function ninjalink_admin_display() {
         $ln_whitelist = "";
 
         if(isset($_POST['ninjalink_ln_id'])){
-            $ln_id = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_id']);
+            $ln_id = strtoupper(preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_id']));
         }
 
         if(isset($_POST['ninjalink_ln_web'])){
@@ -63,7 +63,7 @@ function ninjalink_admin_display() {
         }
 
         if(isset($_POST['ninjalink_ln_blacklist'])){
-            $ln_blacklist = str_replace(array('http://','https://'),array('',''),$_POST['ninjalink_ln_blacklist']);
+            $ln_blacklist = strtolower(str_replace(array('http://','https://','www.'),'',$_POST['ninjalink_ln_blacklist']));
             update_option('ninjalink_ln_blacklist', $ln_blacklist);
         }
 

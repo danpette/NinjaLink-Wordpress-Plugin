@@ -29,7 +29,7 @@ defined('ABSPATH') or die("No script kiddies please!");
 
             <tr valign="top">
                 <th scope="row">Blacklist domains that you don't want the ninjalink plugin to convert. (one domain per line, no http or https or use of www infront of the domain)</th>
-                <td><textarea name="blacklist"><?php echo esc_attr( get_option('ninjalink_ln_blacklist') ); ?></textarea></td>
+                <td><textarea name="ninjalink_ln_blacklist"><?php echo esc_attr( get_option('ninjalink_ln_blacklist') ); ?></textarea></td>
             </tr>
 
             <tr valign="top">
