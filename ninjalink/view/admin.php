@@ -28,8 +28,8 @@ defined('ABSPATH') or die("No script kiddies please!");
         <table class="form-table">
 
             <tr valign="top">
-                <th scope="row">Whitelist (one domain per line, no http or https)</th>
-                <td><textarea name="ninjalink_ln_whitelist"><?php echo esc_attr( get_option('ninjalink_ln_whitelist') ); ?></textarea></td>
+                <th scope="row">Blacklist domains that you don't want the ninjalink plugin to convert. (one domain per line, no http or https or use of www infront of the domain)</th>
+                <td><textarea name="blacklist"><?php echo esc_attr( get_option('ninjalink_ln_blacklist') ); ?></textarea></td>
             </tr>
 
             <tr valign="top">
@@ -47,3 +47,17 @@ defined('ABSPATH') or die("No script kiddies please!");
         <?php submit_button(); ?>
 
     </form>
+    <style>
+        .failed {
+            background-color: white;
+            color: black;
+            padding: 1px 12px;
+            border-left: 3px solid #F00;
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+            margin: 5px 0 15px;
+        }
+
+        .failed p {
+            line-height: 10px;
+        }
+    </style>

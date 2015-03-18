@@ -9,20 +9,20 @@
  */
 defined('ABSPATH') or die("No script kiddies please!");
 
-const VERSION = '1.1.0 - 09.03.2015';
+const VERSION = '1.1.0 - 18.03.2015';
 
 function ninjalink_js() {
     $ln_id = get_option('ninjalink_ln_id');
     $ln_web = get_option('ninjalink_ln_web');
-    $ln_whitelist = array_filter(preg_split("/\\r\\n|\\r|\\n/",get_option('ninjalink_ln_whitelist')));
-    if(count($ln_whitelist) > 0){
-        $ln_whitelist = '["'.implode('","',$ln_whitelist).'"]';
+    $ln_blacklist = array_filter(preg_split("/\\r\\n|\\r|\\n/",get_option('ninjalink_ln_blacklist')));
+    if(count($ln_blacklist) > 0){
+        $ln_blacklist = '["'.implode('","',$ln_blacklist).'"]';
     } else {
-        $ln_whitelist = '[]';
+        $ln_blacklist = '[]';
     }
     if(!empty($ln_id) && !empty($ln_web)) {
         echo '<script type="text/javascript">' .
-            "var ln_whitelist = ". $ln_whitelist . ";" .
+            "var ln_blacklist = ". $ln_blacklist . ";" .
             "var ln_id = '" . str_replace(' ','',get_option('ninjalink_ln_id')) . "';" .
             "var ln_web = '" . str_replace(' ','',get_option('ninjalink_ln_web')) . "';" .
             "function LinkNinjaOnload() {" .
@@ -62,9 +62,9 @@ function ninjalink_admin_display() {
             $ln_web = preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_web']);
         }
 
-        if(isset($_POST['ninjalink_ln_whitelist'])){
-            $ln_whitelist = str_replace(array('http://','https://'),array('',''),$_POST['ninjalink_ln_whitelist']);
-            update_option('ninjalink_ln_whitelist', $ln_whitelist);
+        if(isset($_POST['ninjalink_ln_blacklist'])){
+            $ln_blacklist = str_replace(array('http://','https://'),array('',''),$_POST['ninjalink_ln_blacklist']);
+            update_option('ninjalink_ln_blacklist', $ln_blacklist);
         }
 
         require plugin_dir_path(__FILE__) . '/lib/api.php';
@@ -81,10 +81,10 @@ function ninjalink_admin_display() {
                 update_option('ninjalink_ln_id', $ln_id);
                 $updated = true;
             } else {
-                $failed = isset($response->message) ? $response->message : 'Failed to save new settings, please contact post@ninjalink.com';
+                $failed = isset($response->message) ? 'Failed to save new settings. '.$response->message : 'Failed to save new settings. Please contact post@ninjalink.com';
             }
         } else {
-            $failed = 'Missing "User ID" and/or "Website ID", both fields are required.';
+            $failed = 'Failed to save new settings. Missing "User ID" and/or "Website ID", both fields are required.';
         }
     }
 
