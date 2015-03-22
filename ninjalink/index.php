@@ -52,7 +52,7 @@ function ninjalink_admin_display() {
     if($_POST && isset($_POST['option_page']) && $_POST['option_page'] === "ninjalink-settings" && isset($_POST['action']) && $_POST['action'] === "update"){
         $ln_id = "";
         $ln_web = "";
-        $ln_whitelist = "";
+        $ln_blacklist = "";
 
         if(isset($_POST['ninjalink_ln_id'])){
             $ln_id = strtoupper(preg_replace("/[^A-Za-z0-9 ]/", '', $_POST['ninjalink_ln_id']));
