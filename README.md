@@ -6,6 +6,9 @@ Ninjalink.com is available in the following countries:
 
 # Changelog
 
+Version 1.1.2 - 10.09.2015
+* Fixed save bug in admin, was not possible to disable plugin.
+
 Version 1.1.0 - 18.03.2015
 * Blacklist url, enter the url of the sites you want this script to ignore. use one domain per line, no http://, https:// or www. in front of the domain.
 * Check User ID and Website ID on save. The form will only be saved if the values are correct.
