@@ -56,11 +56,11 @@ function ninjalink_admin_display() {
 
         $nulled = false;
         if(isset($_POST['ninjalink_ln_id']) && empty(trim($_POST['ninjalink_ln_id']))){
-                update_option('ninjalink_ln_web', '');
+                update_option('ninjalink_ln_id', '');
                 $nulled = true;
         }
 
-        if(isset($_POST['ninjalink_ln_id']) && empty(trim($_POST['ninjalink_ln_web']))){
+        if(isset($_POST['ninjalink_ln_web']) && empty(trim($_POST['ninjalink_ln_web']))){
                 update_option('ninjalink_ln_web', '');
                 $nulled = true;
         }
@@ -99,7 +99,11 @@ function ninjalink_admin_display() {
                 $failed = 'Failed to save new settings. Missing "User ID" and/or "Website ID", both fields are required.';
             }
         } else {
-                $updated = true;
+            if(isset($_POST['ninjalink_ln_blacklist'])){
+                $ln_blacklist = strtolower(str_replace(array('http://','https://','www.'),'',$_POST['ninjalink_ln_blacklist']));
+                update_option('ninjalink_ln_blacklist', $ln_blacklist);
+            }
+            $updated = true;
         }
     }
 
